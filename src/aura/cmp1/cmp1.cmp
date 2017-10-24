@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:registerEvent name="searchAccsEvent" type="c:searchAccsEvent"/>
+    <aura:attribute name="paccSearch" type="String" />
+    
+    <div class="slds-form-element searchBox">
+        <label class="slds-form-element__label" for="text-input-id-1">Account Name</label>
+        <div class="slds-form-element__control">
+            <ui:inputText aura:id="accSearch" value="{!v.paccSearch}" class="slds-input" placeholder="Search Accounts" updateOn="keyup" keyup="{!c.fireApplicationEvent}" />
+        </div>
+    </div>
+    
+    <c:cmp2 />	
+</aura:component>
