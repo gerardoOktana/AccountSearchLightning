@@ -5,10 +5,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>accountList</members>
+        <members>accountSearch</members>
         <members>accountsApp</members>
-        <members>cmp1</members>
-        <members>cmp2</members>
-        <members>cmp3</members>
+        <members>contactList</members>
         <members>relateContactsEvent</members>
         <members>searchAccsEvent</members>
         <name>AuraDefinitionBundle</name>

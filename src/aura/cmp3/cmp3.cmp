@@ -1,8 +1,0 @@
-<aura:component >
-    <aura:attribute name="contacts" type="List" />
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
-    <aura:handler event="c:relateContactsEvent" action="{!c.handleApplicationEvent}"/>
-	<!-- related contacts -->
-    <aura:attribute name="test" type="String" />
-    {!v.test}
-</aura:component>

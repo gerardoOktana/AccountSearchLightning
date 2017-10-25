@@ -1,7 +1,8 @@
-<aura:component controller="AccountsController">
+<aura:component controller="AccountsController" implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="accounts" type="List" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
-    <aura:handler event="c:searchAccsEvent" action="{!c.handleApplicationEvent}"/>
+    <aura:handler event="c:searchAccsEvent" action="{!c.searchAccsEvent}"/>
+    <aura:handler event="c:clearSearchEvent" action="{!c.clearSearchEvent}"/>
     <aura:registerEvent name="relateContactsEvent" type="c:relateContactsEvent"/>
     
     <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
@@ -18,7 +19,7 @@
             <aura:iteration items="{!v.accounts}" var="account">
                 <tr>
                     <th scope="row">
-                        <div class="slds-truncate" title="{!account.Name}" onclick="{!c.showContactsEvent}">
+                        <div class="slds-truncate clickable" title="{!account.Name}" onclick="{!c.showContactsEvent}">
                             {!account.Name}
                             <input type="hidden" value="{!account.Id}" class="account-id" />
                         </div>                        

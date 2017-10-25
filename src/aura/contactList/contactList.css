@@ -1,0 +1,6 @@
+.THIS.custom-card{
+    display:inline-block !important;
+    max-height: 160px;
+    max-width: 350px;
+    margin: 10px;
+}

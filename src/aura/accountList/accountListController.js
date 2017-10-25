@@ -2,7 +2,7 @@
     doInit: function(cmp, event, helper) {  
         helper.getAccountList(cmp,null);
     },
-    handleApplicationEvent : function(cmp, event, helper) {
+    searchAccsEvent : function(cmp, event, helper) {
         var accFilter = event.getParam("accName");
         helper.getAccountList(cmp,accFilter);
     },
@@ -15,5 +15,8 @@
             "accId" : accountId
         });
         relateContactsEvent.fire();
+    },
+    clearSearchEvent : function(cmp, event, helper) {  
+        helper.getAccountList(cmp,null);
     }
 })

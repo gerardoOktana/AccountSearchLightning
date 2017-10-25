@@ -1,4 +1,4 @@
 <aura:application extends="force:slds">
-    <c:cmp1 />
-    <c:cmp3 />
+    <c:accountSearch />
+    <c:contactList />
 </aura:application>
