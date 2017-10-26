@@ -1,5 +1,4 @@
 <aura:component implements="flexipage:availableForAllPageTypes" controller="ContactsController">    
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
     <aura:handler event="c:relateContactsEvent" action="{!c.relateContactsEvent}"/>
     <aura:handler event="c:clearSearchEvent" action="{!c.clearSearchEvent}"/>
     
@@ -21,12 +20,12 @@
     
     <!-- Body with list of contacts -->
     <lightning:layout >
-        <lightning:layoutItem >            
+        <lightning:layoutItem class="slds-grid">            
             
             <!-- Iterate over the list of contacts and display them -->
             <aura:iteration var="contact" items="{!v.contacts}">
                 <lightning:card variant="Narrow" title="{!contact.Name}" 
-                                iconName="standard:contact" class="custom-card">
+                                iconName="standard:contact" class="slds-col slds-p-horizontal--small custom-card">
                     <aura:set attribute="actions">
                         <lightning:button name="details" label="Details" onclick="{!c.goToRecord}" />
                     </aura:set>    

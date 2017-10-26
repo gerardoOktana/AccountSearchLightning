@@ -1,6 +1,7 @@
-.THIS.custom-card{
-    display:inline-block !important;
-    max-height: 160px;
-    max-width: 350px;
+.THIS .slds-card {
     margin: 10px;
+}
+.THIS .custom-card p{
+    text-overflow: ellipsis;
+    width: 350px;    
 }

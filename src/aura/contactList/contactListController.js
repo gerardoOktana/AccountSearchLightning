@@ -1,7 +1,4 @@
 ({
-    doInit: function(cmp, event, helper) {  
-        
-    },
     relateContactsEvent : function(cmp, event, helper) {
         var accId = event.getParam("accId");
         helper.loadContacts(cmp, accId);

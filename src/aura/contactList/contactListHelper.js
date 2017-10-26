@@ -7,8 +7,6 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 cmp.set("v.contacts", response.getReturnValue());
-                console.log(accId);
-                console.log(response.getReturnValue());
                 this.updateTotal(cmp);
             }            
         });
