@@ -1,0 +1,7 @@
+.THIS .slds-card {
+    margin: 10px;
+}
+.THIS .custom-card p{
+    text-overflow: ellipsis;
+    width: 350px;    
+}

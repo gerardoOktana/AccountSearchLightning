@@ -1,0 +1,46 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="ContactsController">    
+    <aura:handler event="c:relateContactsEvent" action="{!c.relateContactsEvent}"/>
+    <aura:handler event="c:clearSearchEvent" action="{!c.clearSearchEvent}"/>
+    
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="totalContacts" type="Integer" default="0"/>
+    
+    <!-- Page header with a counter that displays total number of contacts -->
+    
+    <div class="slds-page-header slds-page-header--object-home">
+        <lightning:layout >
+            <lightning:layoutItem >
+                <lightning:icon iconName="standard:contact" />
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-m-left--small slds-align_absolute-center">
+                <h1 class="slds-page-header__title slds-p-right--x-small">Contacts ({!v.totalContacts})</h1>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+    <!-- Body with list of contacts -->
+    <lightning:layout >
+        <lightning:layoutItem class="slds-grid">            
+            
+            <!-- Iterate over the list of contacts and display them -->
+            <aura:iteration var="contact" items="{!v.contacts}">
+                <lightning:card variant="Narrow" title="{!contact.Name}" 
+                                iconName="standard:contact" class="slds-col slds-p-horizontal--small custom-card">
+                    <aura:set attribute="actions">
+                        <lightning:button name="details" label="Details" onclick="{!c.goToRecord}" />
+                    </aura:set>    
+                    <aura:set attribute="footer">
+                        <lightning:badge label="{!contact.Email}"/>
+                    </aura:set>
+                    <p class="slds-p-horizontal--small">
+                        {!contact.Phone}
+                    </p>
+                    <p class="slds-p-horizontal--small slds-truncate">
+                        {!contact.MailingStreet}
+                    </p>
+                </lightning:card>
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

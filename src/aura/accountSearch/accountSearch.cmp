@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:registerEvent name="searchAccsEvent" type="c:searchAccsEvent"/>
+    <aura:registerEvent name="clearSearchEvent" type="c:clearSearchEvent"/>
+    
+    <aura:attribute name="paccSearch" type="String" />
+    
+    <div class="slds-form-element searchBox">
+        <label class="slds-form-element__label" for="text-input-id-1">Account Name</label>
+        <div class="slds-form-element__control">
+            <ui:inputText aura:id="accSearch" value="{!v.paccSearch}" class="slds-input" placeholder="Search Accounts" updateOn="keyup" keyup="{!c.keystrokeSearchEvent}" />
+        </div>
+    </div>
+    
+    <c:accountList />	
+</aura:component>
