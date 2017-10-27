@@ -1,7 +1,17 @@
 .THIS .slds-card {
-    margin: 10px;
+    display: inline-block;
+    margin-right:10px;
+}
+.THIS .slds-card:before {
+    margin-left:-10px;
+}
+.THIS .slds-card:after {
+    margin-left:0px;
 }
 .THIS .custom-card p{
     text-overflow: ellipsis;
     width: 350px;    
+}
+.THIS .contactsContainer {
+    width: 100%;
 }
