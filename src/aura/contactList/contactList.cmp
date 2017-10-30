@@ -1,6 +1,7 @@
 <aura:component implements="flexipage:availableForAllPageTypes" controller="ContactsController">    
     <aura:handler event="c:relateContactsEvent" action="{!c.relateContactsEvent}"/>
     <aura:handler event="c:clearSearchEvent" action="{!c.clearSearchEvent}"/>
+    <aura:handler event="c:searchAccsEvent" action="{!c.clearSearchEvent}"/>
     
     <aura:attribute name="contacts" type="List"/>
     <aura:attribute name="totalContacts" type="Integer" default="0"/>
