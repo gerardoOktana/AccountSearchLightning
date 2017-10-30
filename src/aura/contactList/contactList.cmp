@@ -22,8 +22,8 @@
     </div>
     
     <!-- Body with list of contacts -->
-    <lightning:layout class="contactsContainer">
-        <lightning:layoutItem >
+    <lightning:layout class="width-full">
+        <lightning:layoutItem class="width-full">
             <!-- Iterate over the list of contacts and display them -->
             <aura:iteration var="contact" items="{!v.contacts}">
                 <lightning:card variant="Narrow" title="{!contact.Name}" 

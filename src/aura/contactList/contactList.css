@@ -9,11 +9,11 @@
 .THIS .slds-card:after {
     margin-left:0px;
 }
-.THIS .custom-card p{
+.THIS .custom-card p {
     text-overflow: ellipsis;
     width: 350px;    
 }
-.THIS .contactsContainer {
+.THIS .width-full {
     width: 100%;
 }
 
@@ -22,5 +22,9 @@
         margin-right: 0;
         width: 100%;
         margin-top: .75rem;
+    }
+    .THIS .custom-card p{
+        text-overflow: ellipsis;
+        width: 100%;    
     }
 }
