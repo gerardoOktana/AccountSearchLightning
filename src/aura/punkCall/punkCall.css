@@ -9,7 +9,7 @@
 }
 .THIS .beer-card-img{
     height: 180px;
-    width: 180px;
+    flex: 0 0 180px;
     margin: 10px;
     text-align: center;
     overflow: hidden;
@@ -19,6 +19,7 @@
 }
 .THIS .beer-card-data {
     padding: 10px;
+    flex: 1;
 }
 .THIS .beer-card-data h1{
     color: #6B3E26;
