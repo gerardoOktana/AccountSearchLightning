@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access='global'>
+    <aura:attribute name="callResult" type="String" />
+    <aura:attribute name="beers" type="List" />
+    
+    <button class="slds-button slds-button_neutral" onclick="{!c.callPunkAPI}" >Call Punk API</button>
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="textarea-id-01">Result JS Call</label>
+        <div class="slds-form-element__control">
+            <textarea class="slds-textarea" placeholder="Please press Call Punk API button">{!v.callResult}</textarea>
+        </div>
+        <aura:if isTrue="{!v.callResult != null}">
+            <aura:iteration var="beer" items="{!v.beers}">
+                <div class="beer-card">
+                    <div class="beer-card-img">
+                        <img src="{!beer.image_url}" />
+                    </div>
+                    <div class="beer-card-data">
+                        <h1>{!beer.name}</h1>
+                        <p><strong>First Brewed: </strong>{!beer.first_brewed}<br /><strong>Tagline: </strong>{!beer.tagline}</p>
+                        <p>{!beer.description}</p>                        
+                    </div>                    
+                </div>
+            </aura:iteration>
+        </aura:if>
+    </div>
+</aura:component>

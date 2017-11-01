@@ -5,12 +5,7 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>accountList</members>
-        <members>accountSearch</members>
-        <members>accountsApp</members>
-        <members>contactList</members>
-        <members>relateContactsEvent</members>
-        <members>searchAccsEvent</members>
+        <members>*</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <version>34.0</version>

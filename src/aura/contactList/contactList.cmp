@@ -1,6 +1,7 @@
 <aura:component implements="flexipage:availableForAllPageTypes" controller="ContactsController">    
     <aura:handler event="c:relateContactsEvent" action="{!c.relateContactsEvent}"/>
     <aura:handler event="c:clearSearchEvent" action="{!c.clearSearchEvent}"/>
+    <aura:handler event="c:searchAccsEvent" action="{!c.clearSearchEvent}"/>
     
     <aura:attribute name="contacts" type="List"/>
     <aura:attribute name="totalContacts" type="Integer" default="0"/>
@@ -15,19 +16,21 @@
             <lightning:layoutItem class="slds-m-left--small slds-align_absolute-center">
                 <h1 class="slds-page-header__title slds-p-right--x-small">Contacts ({!v.totalContacts})</h1>
             </lightning:layoutItem>
+            <lightning:layoutItem class="slds-m-right--small slds-align_absolute-center">
+                <button class="slds-button slds-button_neutral" onclick="{!c.goToNewRecord}" >New</button>
+            </lightning:layoutItem>
         </lightning:layout>
     </div>
     
     <!-- Body with list of contacts -->
-    <lightning:layout >
-        <lightning:layoutItem class="slds-grid">            
-            
+    <lightning:layout class="width-full">
+        <lightning:layoutItem class="width-full">
             <!-- Iterate over the list of contacts and display them -->
             <aura:iteration var="contact" items="{!v.contacts}">
                 <lightning:card variant="Narrow" title="{!contact.Name}" 
                                 iconName="standard:contact" class="slds-col slds-p-horizontal--small custom-card">
                     <aura:set attribute="actions">
-                        <lightning:button name="details" label="Details" onclick="{!c.goToRecord}" />
+                         <button class="slds-button slds-button_neutral" data-index="{!contact.Id}" onclick="{!c.goToRecord}" >Details</button>
                     </aura:set>    
                     <aura:set attribute="footer">
                         <lightning:badge label="{!contact.Email}"/>
