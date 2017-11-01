@@ -9,7 +9,6 @@
             <textarea class="slds-textarea" placeholder="Please press Call Punk API button">{!v.callResult}</textarea>
         </div>
         <aura:if isTrue="{!v.callResult != null}">
-            <!-- {!v.body} -->
             <aura:iteration var="beer" items="{!v.beers}">
                 <div class="beer-card">
                     <div class="beer-card-img">

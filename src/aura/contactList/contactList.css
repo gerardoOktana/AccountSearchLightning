@@ -1,13 +1,10 @@
 .THIS .slds-card {
     display: inline-block;
-    margin-right:10px;
-    margin-top: .75rem;
-}
-.THIS .slds-card:before {
-    margin-left:-10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 .THIS .slds-card:after {
-    margin-left:0px;
+    margin-left: 0px;
 }
 .THIS .custom-card p {
     text-overflow: ellipsis;
@@ -21,7 +18,7 @@
     .THIS .slds-card {
         margin-right: 0;
         width: 100%;
-        margin-top: .75rem;
+        margin-top: 10px;
     }
     .THIS .custom-card p{
         text-overflow: ellipsis;
