@@ -2,7 +2,6 @@
     background-color: #FFF;
     border: 1px solid #DDDBDA;
     border-radius: .25rem;
-    background-clip: padding-box;
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.10);
     display: flex;
     margin-top: 10px;
@@ -32,4 +31,11 @@
 }
 .THIS .beer-card-data p{
     margin-top: 10px;
+}
+.THIS .toggle {
+    display: none;
+}
+.THIS .loadMore {
+    margin: 10px;
+    text-align: center;
 }
