@@ -1,15 +1,22 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access='global'>
+    
     <aura:attribute name="callResult" type="String" />
     <aura:attribute name="beers" type="List" />
+    <aura:attribute name="loadBeer" type="Integer" default="4" />
     
-    <button class="slds-button slds-button_neutral" onclick="{!c.callPunkAPI}" >Call Punk API</button>
     <div class="slds-form-element">
-        <label class="slds-form-element__label" for="textarea-id-01">Result JS Call</label>
-        <div class="slds-form-element__control">
-            <textarea class="slds-textarea" placeholder="Please press Call Punk API button">{!v.callResult}</textarea>
-        </div>
+        <button class="slds-button slds-button_neutral" onclick="{!c.callPunkAPI}" >Call Punk API</button> 
         <aura:if isTrue="{!v.callResult != null}">
-            <aura:iteration var="beer" items="{!v.beers}">
+            <button class="slds-button slds-button_neutral" onclick="{!c.toggleResponse}" >Show/Hide Response</button>
+            <div aura:id="call-response" class="toggle">
+                <label class="slds-form-element__label" for="textarea-id-01">Result JS Call</label>
+                <div class="slds-form-element__control">
+                    <textarea class="slds-textarea" placeholder="Please press Call Punk API button">{!v.callResult}</textarea>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.callResult != null}">
+            <aura:iteration var="beer" items="{!v.beers}" end="{!v.loadBeer}">
                 <div class="beer-card">
                     <div class="beer-card-img">
                         <img src="{!beer.image_url}" />
@@ -21,6 +28,9 @@
                     </div>                    
                 </div>
             </aura:iteration>
+            <div aura:id="load-more" class="loadMore">
+            	<button class="slds-button slds-button_neutral" onclick="{!c.loadMore}" >Load More</button>
+            </div>
         </aura:if>
     </div>
 </aura:component>
